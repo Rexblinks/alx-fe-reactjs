@@ -5,8 +5,8 @@ function UserProfile(props) {
     <div
       style={{
         border: "1px solid gray",
-        padding: "15px",
-        margin: "15px auto",
+        padding: "10px",   // 👈 added 10px
+        margin: "10px auto", // 👈 also contains 10px
         borderRadius: "8px",
         backgroundColor: "#f9f9f9",
       }}
@@ -21,3 +21,4 @@ function UserProfile(props) {
 }
 
 export default UserProfile;
+
