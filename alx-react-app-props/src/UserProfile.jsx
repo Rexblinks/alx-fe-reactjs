@@ -1,14 +1,20 @@
-import { useContext } from "react";
+import React, { useContext } from "react";
 import UserContext from "./UserContext";
 import UserInfo from "./UserInfo";
 
 function UserProfile() {
-  const userData = useContext(UserContext); // 👈 consume context here
+  const user = useContext(UserContext);
 
-  return <UserInfo userData={userData} />; // 👈 pass it as prop
+  return (
+    <div>
+      <h1>User Profile</h1>
+      <UserInfo user={user} />
+    </div>
+  );
 }
 
 export default UserProfile;
+
 
 
 

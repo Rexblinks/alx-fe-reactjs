@@ -1,9 +1,13 @@
-// src/App.jsx
-import UserProfile from './UserProfile';
-import UserContext from './UserContext';
+import React from "react";
+import UserContext from "./UserContext";
+import UserProfile from "./UserProfile";
 
 function App() {
-  const userData = { name: "Jane Doe", email: "jane.doe@example.com" };
+  const userData = {
+    name: "Simon Odoh",
+    age: 25,
+    bio: "Aspiring frontend developer"
+  };
 
   return (
     <UserContext.Provider value={userData}>
@@ -13,6 +17,7 @@ function App() {
 }
 
 export default App;
+
 
 
 
