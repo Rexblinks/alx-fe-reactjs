@@ -1,16 +1,20 @@
-// src/components/UserProfile.jsx
+import React, { useContext } from "react";
+import UserContext from "./UserContext";
+import UserInfo from "./UserInfo";
 
-import React from "react";
+function UserProfile() {
+  const user = useContext(UserContext);
 
-// Functional component that takes props
-const UserProfile = (props) => {
   return (
     <div>
-      <h2>{props.name}</h2>
-      <p>Age: {props.age}</p>
-      <p>Bio: {props.bio}</p>
+      <h1>User Profile</h1>
+      <UserInfo user={user} />
     </div>
   );
-};
+}
 
 export default UserProfile;
+
+
+
+
