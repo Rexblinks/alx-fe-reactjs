@@ -1,21 +1,15 @@
-import React, { useContext } from "react";
-import UserContext from "./UserContext";
+import { useContext } from "react";
+import UserContext from "../UserContext";
 
 function UserDetails() {
-  const user = useContext(UserContext);
+  const userData = useContext(UserContext);
 
   return (
     <div>
-      <p>Name: {user.name}</p>
-      <p>Age: {user.age}</p>
-      <p>Bio: {user.bio}</p>
+      <p>Name: {userData.name}</p>
+      <p>Email: {userData.email}</p>
     </div>
   );
 }
 
 export default UserDetails;
-
-
-
-
-
