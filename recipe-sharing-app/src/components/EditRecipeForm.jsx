@@ -6,17 +6,25 @@ const EditRecipeForm = ({ recipe, onFinish }) => {
   const [title, setTitle] = useState(recipe.title);
   const [description, setDescription] = useState(recipe.description);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = (event) => {
+    event.preventDefault();
     updateRecipe({ ...recipe, title: title.trim(), description: description.trim() });
     if (onFinish) onFinish();
   };
 
   return (
     <form onSubmit={handleSubmit}>
-      <input value={title} onChange={(e) => setTitle(e.target.value)} />
+      <input
+        value={title}
+        onChange={(event) => setTitle(event.target.value)}
+        placeholder="Recipe title"
+      />
       <br />
-      <textarea value={description} onChange={(e) => setDescription(e.target.value)} />
+      <textarea
+        value={description}
+        onChange={(event) => setDescription(event.target.value)}
+        placeholder="Recipe description"
+      />
       <br />
       <button type="submit">Save Changes</button>
     </form>
