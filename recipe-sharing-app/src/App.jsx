@@ -1,8 +1,10 @@
-import { BrowserRouter as Router, Routes, Route, Link, useParams } from 'react-router-dom';
+import { Routes, Route, Link, useParams } from 'react-router-dom';
 import AddRecipeForm from './components/AddRecipeForm';
 import RecipeList from './components/RecipeList';
 import RecipeDetails from './components/RecipeDetails';
 import SearchBar from './components/SearchBar';
+import FavoritesList from './components/FavoritesList';
+import RecommendationsList from './components/RecommendationsList';
 
 function RecipeDetailsWrapper() {
   const { id } = useParams();
@@ -11,28 +13,33 @@ function RecipeDetailsWrapper() {
 
 function App() {
   return (
-    <Router>
-      <div style={{ padding: '1rem' }}>
-        <h1>🍲 Recipe Sharing App</h1>
-        <nav style={{ marginBottom: '1rem' }}>
-          <Link to="/">Home</Link>
-        </nav>
+    <div style={{ padding: '1rem' }}>
+      <h1>🍲 Recipe Sharing App</h1>
+      
+      {/* Navigation */}
+      <nav style={{ marginBottom: '1rem' }}>
+        <Link to="/" style={{ marginRight: '1rem' }}>Home</Link>
+        <Link to="/favorites" style={{ marginRight: '1rem' }}>My Favorites</Link>
+        <Link to="/recommendations">Recommendations</Link>
+      </nav>
 
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <>
-                <AddRecipeForm />
-                <SearchBar />
-                <RecipeList />
-              </>
-            }
-          />
-          <Route path="/recipes/:id" element={<RecipeDetailsWrapper />} />
-        </Routes>
-      </div>
-    </Router>
+      {/* Routes */}
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <SearchBar />
+              <AddRecipeForm />
+              <RecipeList />
+            </>
+          }
+        />
+        <Route path="/recipes/:id" element={<RecipeDetailsWrapper />} />
+        <Route path="/favorites" element={<FavoritesList />} />
+        <Route path="/recommendations" element={<RecommendationsList />} />
+      </Routes>
+    </div>
   );
 }
 
