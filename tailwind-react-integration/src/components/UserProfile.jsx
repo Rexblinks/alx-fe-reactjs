@@ -1,11 +1,17 @@
 import React from 'react';
 
-function UserProfile({ name, age, bio }) {
+function UserProfile() {
   return (
-    <div className="max-w-sm bg-white rounded-lg shadow-lg p-6 text-center">
-      <h2 className="text-2xl font-bold text-blue-800 mb-2">{name}</h2>
-      <p className="text-gray-700 mb-1">Age: {age}</p>
-      <p className="text-gray-600">{bio}</p>
+    <div className="user-profile bg-gray-100 p-8 max-w-sm mx-auto my-20 rounded-lg shadow-lg text-center">
+      <img
+        src="https://via.placeholder.com/150"
+        alt="User"
+        className="rounded-full w-36 h-36 mx-auto"
+      />
+      <h1 className="text-xl text-blue-800 my-4">John Doe</h1>
+      <p className="text-gray-600 text-base">
+        Developer at Example Co. Loves to write code and explore new technologies.
+      </p>
     </div>
   );
 }
