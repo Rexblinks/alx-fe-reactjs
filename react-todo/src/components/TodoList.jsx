@@ -4,7 +4,7 @@ function TodoList() {
   // initial todos with unique ids
   const [todos, setTodos] = useState([
     { id: 1, text: "Learn React", completed: false },
-    { id: 2, text: "Build a project", completed: true },
+    { id: 2, text: "Build a project", completed: true }
   ]);
   const [newTodo, setNewTodo] = useState("");
 
@@ -15,7 +15,7 @@ function TodoList() {
     if (!trimmed) return;
     setTodos((prev) => [
       ...prev,
-      { id: Date.now(), text: trimmed, completed: false },
+      { id: Date.now(), text: trimmed, completed: false }
     ]);
     setNewTodo("");
   };
@@ -54,7 +54,7 @@ function TodoList() {
             onClick={() => toggleTodo(todo.id)}
             style={{
               textDecoration: todo.completed ? "line-through" : "none",
-              cursor: "pointer",
+              cursor: "pointer"
             }}
           >
             {todo.text}{" "}
