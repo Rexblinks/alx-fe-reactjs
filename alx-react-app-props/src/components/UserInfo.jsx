@@ -11,5 +11,3 @@ function UserInfo({ user }) {
 }
 
 export default UserInfo;
-
-
