@@ -1,6 +1,11 @@
 // src/App.jsx
 import React, { useState } from "react";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Navigate
+} from "react-router-dom";
 import Home from "./components/Home";
 import Profile from "./components/Profile";
 import ProfileDetails from "./components/ProfileDetails";
@@ -14,16 +19,17 @@ function ProtectedRoute({ children, isAuthenticated }) {
 }
 
 function App() {
-  // Simple authentication state for demo
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login onLogin={() => setIsAuthenticated(true)} />} />
-        
-        {/* Protected Profile Route */}
+        <Route
+          path="/login"
+          element={<Login onLogin={() => setIsAuthenticated(true)} />}
+        />
+
         <Route
           path="/profile/*"
           element={
@@ -32,12 +38,12 @@ function App() {
             </ProtectedRoute>
           }
         >
-          {/* Nested Routes */}
+          {/* ✅ Nested Routes */}
           <Route path="details" element={<ProfileDetails />} />
           <Route path="settings" element={<ProfileSettings />} />
         </Route>
 
-        {/* Dynamic Route for Blog */}
+        {/* ✅ Dynamic Route */}
         <Route path="/blog/:id" element={<BlogPost />} />
       </Routes>
     </BrowserRouter>
